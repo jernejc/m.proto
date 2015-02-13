@@ -1,8 +1,10 @@
-'use strict';
+  'use strict';
 
 var React = require('react');
 var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 var pageStore = require('../../stores/page');
+var SideBarComponent = React.createFactory(require('../modules/sidebar.jsx'));
+var TopBarComponent = React.createFactory(require('../modules/topbar.jsx'));
 var Router = require('react-router');
 var Route = require('react-router').Route;
 var DefaultRoute = require('react-router').DefaultRoute;
@@ -25,19 +27,14 @@ var DefaultComponent = React.createClass({
   },
   render: function() {
     var name = this.getRoutes().reverse()[0].name;
-    console.log('name', name);
+    console.log('Route name', name);
 
     return (
       /* jshint ignore:start */
-      <div>
         <div className="default">
-          <nav className="menu">
-            <ul>
-              <li><Link to="home">Home</Link></li>
-              <li><Link to="dashboard">Dashboard</Link></li>
-            </ul>
-          </nav>
+          <SideBarComponent />
           <div className="main-container">
+            <TopBarComponent />
             <div className="content">
               <TransitionGroup component="div" transitionName="example">
                 <RouteHandler key={name}/>
@@ -45,7 +42,6 @@ var DefaultComponent = React.createClass({
             </div>
           </div>
         </div>
-      </div>
       /* jshint ignore:end */
     );
   },

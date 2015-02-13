@@ -57,6 +57,13 @@
   text-decoration: none;
 }
 
+.sidebar {
+    transform: translateX(-100%);
+    &.open {
+        transform: translateX(0%);
+    }
+}
+
 
 
 // Styling on warning for users on IE7 or below
