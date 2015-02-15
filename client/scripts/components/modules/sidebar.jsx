@@ -1,16 +1,16 @@
 'use strict';
 
 var React = require('react/addons');
-var sideBarStore = require('../../stores/sidebar');
+var pageStore = require('../../stores/page');
 
 function getSidebarState() {
     return {
-        isOpen: sideBarStore.getStatus()
+        isOpen: pageStore.getSidebarStatus()
     }
 }
 
 var SideBarComponent = React.createClass({
-    mixins: [sideBarStore.mixin],
+    mixins: [pageStore.mixin],
 
     getInitialState: function() {
         return getSidebarState();
@@ -27,9 +27,7 @@ var SideBarComponent = React.createClass({
         return (
             /* jshint ignore:start */
             <div className={classString}>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                </ul>
+                
             </div>
             /* jshint ignore:end */
         );

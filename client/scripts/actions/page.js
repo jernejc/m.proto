@@ -7,11 +7,19 @@ var assign = require('object-assign');
 
 module.exports = {
 
-  set: function(page) {
-    Dispatcher.handleViewAction({
-      actionType: pageConstants.SET_CURRENT_PAGE,
-      page: assign({}, pageDefaults, page)
-    });
-  }
+	set: function(page) {
+		Dispatcher.handleViewAction({
+			actionType: pageConstants.SET_CURRENT_PAGE,
+			page: assign({}, pageDefaults, page)
+		});
+	},
+
+	toggleSidebar: function(direction) {
+		console.log('toggleSidebar');
+		Dispatcher.handleViewAction({
+			actionType: pageConstants.TOGGLE_SIDEBAR,
+			direction: direction
+		});
+	}
 
 };

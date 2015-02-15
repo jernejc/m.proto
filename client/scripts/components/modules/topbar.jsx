@@ -1,7 +1,8 @@
 'use strict';
 
 var React = require('react/addons');
-var sideBarActions = require('../../actions/sidebar');
+var pageActions = require('../../actions/page');
+var filterActions = require('../../actions/filter')
 var Button = React.createFactory(require('../modules/button.jsx'));
 
 var SidebarComponent = React.createClass({
@@ -9,7 +10,8 @@ var SidebarComponent = React.createClass({
         return (
             /* jshint ignore:start */
             <div className="topbar">
-                <Button text="Toggle" icon="list-thumbnails" onClick={this.toggleSidebar} />
+                <Button icon="list-thumbnails" onClick={this.toggleSidebar} className="menu-btn" />
+                <Button icon="checkbox" onClick={this.toggleFilter} className="filter-btn" />
             </div>
             /* jshint ignore:end */
         );
@@ -17,7 +19,11 @@ var SidebarComponent = React.createClass({
 
     toggleSidebar: function() {
         console.log('openSidebar')
-        sideBarActions.toggle();
+        pageActions.toggleSidebar('left');
+    },
+
+    toggleFilter: function() {
+        filterActions.toggle();
     }
 
 });

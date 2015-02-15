@@ -9,7 +9,6 @@ var Route = require('react-router').Route;
 var DefaultRoute = require('react-router').DefaultRoute;
 var RouteHandler = require('react-router').RouteHandler;
 var Redirect = require('react-router').Redirect;
-var Link = require('react-router').Link;
 
 var routes = (
   <Route handler={DefaultLayout}>
