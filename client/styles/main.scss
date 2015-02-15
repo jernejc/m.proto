@@ -44,6 +44,13 @@ button {
 input {
     border: 1px solid #CCC;
     background: #FFF; 
+    width: 100%;
+    padding: 1em;
+
+    &.half-width {
+        width: 49.5%;
+        display: inline-block;
+    }
 }
 
 h1,h2,h3,h4,h5 {
@@ -60,7 +67,7 @@ h1,h2,h3,h4,h5 {
     transition: transform 0.2s linear;
     
     &.left {
-        transform: translateX(15em);
+        transform: translateX(20em);
     }
 }
 
@@ -68,7 +75,7 @@ h1,h2,h3,h4,h5 {
     position: fixed;
     top: 0px;
     bottom: 0px;
-    width: 15em;
+    width: 20em;
     background: #e2e2e2;
 
     transform: translateX(-100%);
@@ -119,7 +126,7 @@ h1,h2,h3,h4,h5 {
     h3 {
         background: #FFF;
         position: relative;
-        line-height: 4.5em;
+        line-height: 4em;
         text-align: center;
 
         .close {
@@ -128,8 +135,89 @@ h1,h2,h3,h4,h5 {
             line-height: 0;
             width: 2.5em;
             height: 2.5em;
-            margin: 1em;
+            margin: 0.75em;
         }
+    }
+
+    .form {
+        margin: 1em;
+
+        input {
+            &.half-width {
+                background: url('../images/arrow.png') no-repeat 95% #FFF;
+            }
+            &.surface {
+                margin-left: 1%;
+            }
+        }
+
+        .slider {
+            .bar {
+                border-radius: 1em;
+                background: #FFF;
+                width: 100%;
+                margin: 0 auto;
+                min-height: 0.8em;
+                border: 1px solid #CCC;
+                margin-bottom: 0.2em;
+
+                button {
+                    &.less {
+                        float: right;
+                    }
+                }
+            }
+
+            span {
+                &.min {
+                    float: left;
+                    margin-left: 1%;
+                }
+                &.max {
+                    float: right;
+                    margin-right: 1%;
+                }
+            }
+        }
+
+        .type {
+            width: 32.6%;
+            margin-right: 1%;
+            display: inline-block;
+            background: #FFF;
+            text-align: center;
+            border: 1px solid #CCC;
+            padding: 1em 0em;
+
+            &.last {
+                margin-right: 0%;
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        .submit {
+            width: 100%;
+            padding: 1em;
+            background: #666;
+            color: #FFF;
+        }
+    }
+}
+
+/* general */
+
+.row {
+    width: 100%;
+    display: block;
+    margin: 5% 0%;
+
+    &:after {
+        clear: both;
+        display: block;
+        content: " ";
     }
 }
 
