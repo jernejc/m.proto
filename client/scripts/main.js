@@ -5,5 +5,3 @@ var Dispatcher = require('./dispatchers/default');
 var pageConstants = require('./constants/page');
 
 console.log('routes', routes);
-
-console.log('Welcome to Yeogurt');

@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var ListComponent = React.createFactory(require('./modules/list.jsx'));
 
 var IndexComponent = React.createClass({
     render: function() {
@@ -13,9 +14,7 @@ var IndexComponent = React.createClass({
                         <input type="text" className="search" placeholder="City, town, region.." />
                     </div>
                 </div>
-                <div className="agents">
-                    <span></span>
-                </div>
+                <ListComponent />
             </div>
             /* jshint ignore:end */
         )

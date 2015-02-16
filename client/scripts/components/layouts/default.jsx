@@ -10,10 +10,10 @@ var Router = require('react-router');
 var RouteHandler = require('react-router').RouteHandler;
 
 var getState = function() {
-  return {
-    title: pageStore.getMetaData().title,
-    isSidebarOpen: pageStore.getSidebarStatus()
-  };
+    return {
+        title: pageStore.getMetaData().title,
+        isSidebarOpen: pageStore.getSidebarStatus()
+    };
 };
 
 var DefaultComponent = React.createClass({
@@ -51,7 +51,7 @@ var DefaultComponent = React.createClass({
     },
     // Event handler for 'change' events coming from store mixins.
     _onChange: function() {
-    this.setState(getState());
+        this.setState(getState());
     }
 });
 

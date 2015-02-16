@@ -59,11 +59,23 @@ h1,h2,h3,h4,h5 {
 }
 
 /**
+*   Layouts
+**/
+
+.default {
+    position: relative;
+    overflow: hidden;
+}
+
+/**
 *   Structure
 **/
 
 .main-container {
-    padding: 1em;
+    padding: 0em;
+    margin: 0em;
+    overflow: hidden;
+
     transition: transform 0.2s linear;
     
     &.left {
@@ -87,7 +99,7 @@ h1,h2,h3,h4,h5 {
 }
 
 .topbar {
-    position: absolute;
+    position: relative;
     z-index: 2;
     left: 0px;
     right: 0px;
@@ -227,7 +239,7 @@ h1,h2,h3,h4,h5 {
 
 /* index */
 .spotlight {
-    position: absolute;
+    position: relative;
     width: 100%;
     min-height: 24em;
     background: #e2e2e2;
