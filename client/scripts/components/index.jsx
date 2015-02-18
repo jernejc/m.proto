@@ -10,7 +10,7 @@ var IndexComponent = React.createClass({
             <div className="page index">
                 <div className="spotlight">
                     <div className="fp-search">
-                        <span className="logo">Logo</span>
+                        <span className="logo">Logo & Slogan or something</span>
                         <input type="text" className="search" placeholder="City, town, region.." />
                     </div>
                 </div>

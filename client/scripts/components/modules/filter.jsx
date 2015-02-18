@@ -2,7 +2,7 @@
 
 var React = require('react/addons');
 var filterStore = require('../../stores/filter');
-var filterActions = require('../../actions/filter')
+var filterActions = require('../../actions/filter');
 var Button = React.createFactory(require('../modules/button.jsx'));
 
 function getFilterState() {

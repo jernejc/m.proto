@@ -241,24 +241,22 @@ h1,h2,h3,h4,h5 {
 .spotlight {
     position: relative;
     width: 100%;
-    min-height: 24em;
     background: #CCC;
     left: 0px;
     top: 0px;
+    padding: 5em 0em;
 
     .fp-search {
-        position: absolute;
-        bottom: 4.5em;
-        margin-left: -7.5em;
-        left: 50%;
+        position: relative;
         text-align: center;
-        width: 15em;
+        width: 25em;
+        margin: 0 auto;
     
         .logo {
-            width: 10em;
+            width: 20em;
             display: block;
             background: #FFF;
-            line-height: 4em;
+            line-height: 6em;
             margin: 0 auto 40px auto;
             border: 1px solid #CCC;
             
@@ -323,22 +321,44 @@ h1,h2,h3,h4,h5 {
 *   Page transitions
 **/ 
 
-.example-enter {
+/* staticPage */
+.staticPage-enter {
     opacity: 0.01;
     transition: all .5s ease-in;
     transform: translateY(0%);
 }
 
-.example-enter.example-enter-active {
+.staticPage-enter.staticPage-enter-active {
     opacity: 1;
 }
 
-.example-leave {
+.staticPage-leave {
     opacity: 1;
     transition: all .5s ease-in;
     transform: translateY(100%);
 }
 
-.example-leave.example-leave-active {
+.staticPage-leave.staticPage-leave-active {
+    opacity: 0.01;
+}
+
+/* example */
+.default-enter {
+    opacity: 0.01;
+    transition: all .5s ease-in;
+    transform: translateY(0%);
+}
+
+.default-enter.default-enter-active {
+    opacity: 1;
+}
+
+.default-leave {
+    opacity: 1;
+    transition: all .5s ease-in;
+    transform: translateY(100%);
+}
+
+.default-leave.default-leave-active {
     opacity: 0.01;
 }
