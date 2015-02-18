@@ -242,7 +242,7 @@ h1,h2,h3,h4,h5 {
     position: relative;
     width: 100%;
     min-height: 24em;
-    background: #e2e2e2;
+    background: #CCC;
     left: 0px;
     top: 0px;
 
@@ -269,6 +269,53 @@ h1,h2,h3,h4,h5 {
             width: 15em;
             margin: 0 auto;
         }
+    }
+}
+
+/* list */
+
+.item {
+    margin: 2em 0em;
+
+    .image {
+        height: 15em;
+        background: #CCC;
+        width: 100%;
+        position: relative;
+
+        .price {
+            position: absolute;
+            bottom: 2.5em;
+            left: 0em;
+            background: rgba(51,51,51,1);
+            color: #FFF;
+            padding: 1em;
+        }
+
+        .agent {
+            position: absolute;
+            bottom: -2.5em;
+            right: 1em;
+            width: 6em;
+            height: 6em;
+            border-radius: 50%;
+            border: 3px solid #FFF;
+            background: #CCC;
+            text-align: center;
+            color: #CCC;
+        }
+    }
+
+    h2,h3 {
+        font-size: 0.9em;
+        margin: 2.2em;
+        color: #666;
+    }
+
+    h2 {
+        font-size: 1.1em;
+        margin: 1.8em 1.8em -1.5em 1.8em;
+        color: #333;
     }
 }
 

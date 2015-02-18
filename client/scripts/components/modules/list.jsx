@@ -30,6 +30,7 @@ var ListComponent = React.createClass({
         for (var key in allItems) {
             items.push(<ListItem key={key} item={allItems[key]} />);
         }
+        
         return (
             /* jshint ignore:start */
             <div className="items">
