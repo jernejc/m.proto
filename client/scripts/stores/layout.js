@@ -20,6 +20,16 @@ var mapLayoutsRoutes = {
 		name: 'StaticLayout',
 		transitionName: 'staticPage',
 		component: Layouts.StaticLayout
+	},
+	filter: {
+		name: 'StaticLayout',
+		transitionName: 'filter',
+		component: Layouts.DefaultLayout
+	},
+	property: {
+		name: 'DefaultLayout',
+		transitionName: 'property',
+		component: Layouts.DefaultLayout
 	}
 }
 

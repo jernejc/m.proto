@@ -4,8 +4,6 @@ var React = require('react/addons');
 var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 var pageStore = require('../../stores/page');
 var SideBarComponent = React.createFactory(require('../modules/sidebar.jsx'));
-var FilterComponent = React.createFactory(require('../modules/filter.jsx'));
-var TopBarComponent = React.createFactory(require('../modules/topbar.jsx'));
 var Router = require('react-router');
 var RouteHandler = require('react-router').RouteHandler;
 
@@ -37,14 +35,8 @@ var DefaultComponent = React.createClass({
         <div className="default">
             <SideBarComponent />
             <div className={mainClasses}>
-                <TopBarComponent />
-                <div className="content">
-                    <TransitionGroup component="div" transitionName="example">
-                        <RouteHandler key={name}/>
-                    </TransitionGroup>
-                </div>
+                {this.props.children}
             </div>
-            <FilterComponent />
         </div>
         /* jshint ignore:end */
         );

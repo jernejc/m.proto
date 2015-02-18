@@ -10,7 +10,7 @@ var DefaultComponent = React.createClass({
                     <div className="main-container">
                         <a href="javascript:history.back();">back</a>
                         <div className="content">
-                      {this.props.children}
+                            {this.props.children}
                         </div>
                     </div>
                 </div>

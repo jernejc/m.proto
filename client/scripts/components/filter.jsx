@@ -1,9 +1,10 @@
 'use strict';
 
 var React = require('react/addons');
-var filterStore = require('../../stores/filter');
-var filterActions = require('../../actions/filter');
-var Button = React.createFactory(require('../modules/button.jsx'));
+var filterStore = require('../stores/filter');
+var filterActions = require('../actions/filter');
+var Navigation = require('react-router').Navigation;
+var Button = React.createFactory(require('./modules/button.jsx'));
 
 function getFilterState() {
     return {
@@ -12,7 +13,7 @@ function getFilterState() {
 }
 
 var filterComponent = React.createClass({
-    mixins: [filterStore.mixin],
+    mixins: [filterStore.mixin, Navigation],
 
     getInitialState: function() {
         return getFilterState();
@@ -61,7 +62,7 @@ var filterComponent = React.createClass({
                             <span>Something</span>
                         </div>
                     </div>
-                    <Button text="Filter" className="submit" onClick={this.submit}/>
+                    <Button text="Filter" className="submit" onClick={this.goToList}/>
                 </div>
             </div>
             /* jshint ignore:end */
@@ -74,15 +75,16 @@ var filterComponent = React.createClass({
     },
 
     toggle: function() {
-        filterActions.toggle();
+        this.transitionTo('/');
     },
 
     budget: function() {
 
     },
 
-    submit: function() {
-
+    goToList: function() {
+        console.log('goToList transitionTo');
+        this.transitionTo('list');
     }
 
 });

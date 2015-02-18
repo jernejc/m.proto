@@ -2,7 +2,7 @@
 
 var React = require('react/addons');
 var listStore = require('../../stores/list');
-var listActions = require('../../actions/list')
+var listActions = require('../../actions/list');
 var Button = React.createFactory(require('../modules/button.jsx'));
 var ListItem = React.createFactory(require('../modules/listItem.jsx'));
 
