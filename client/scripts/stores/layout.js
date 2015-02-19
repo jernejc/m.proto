@@ -38,21 +38,18 @@ var customAnimation = null;
 var LayoutStore = new Store({
 
 	getCurrentLayout: function(name) {
-        console.log(customAnimation);
         if(customAnimation) {
-            console.log('animation name', customAnimation);
             var customLayoutRoutes = mapLayoutsRoutes[name] || mapLayoutsRoutes['default'],
                 currentLayout = {
                     name: customLayoutRoutes.name,
                     transitionName: customAnimation,
                     component: customLayoutRoutes.component
                 };
-            console.log('Current layout',currentLayout);
+
             customAnimation = null;
 
             return currentLayout;
-        }else{
-            console.log('no custom animation');
+        } else {
 		    return mapLayoutsRoutes[name] || mapLayoutsRoutes['default'];
         }
 	},
@@ -65,11 +62,9 @@ var LayoutStore = new Store({
 LayoutStore.dispatcherToken = Dispatcher.register(function(payload) {
 
 	var action = payload.action;
-	console.log('LayoutStore Dispatcher payload: ', payload)
 
 	switch(action.actionType) {
 		case pageConstants.TRANSITION_LAYOUT:
-			console.log('PageStore action: SET_CURRENT_PAGE');
     		LayoutStore.emitChange();
 		break;
 	}

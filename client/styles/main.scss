@@ -383,40 +383,44 @@ h1,h2,h3,h4,h5 {
 .property-enter {
     opacity: 0.01;
     transition: all .2s linear;
-    transform: translateX(0%);
+    transform: translateX(100%);
 }
 
 .property-enter.property-enter-active {
     opacity: 1;
+    transform: translateX(0%);
 }
 
 .property-leave {
     opacity: 1;
     transition: all .2s linear;
-    transform: translateX(-100%);
+    transform: translateX(0%);
 }
 
 .property-leave.property-leave-active {
     opacity: 0.01;
+    transform: translateX(-100%);
 }
 
-/* goList */
-.goList-enter {
+/* front */
+.front-enter {
   opacity: 0.01;
-  transition: all .2s linear;
-  transform: translateX(0%);
-}
-
-.goList-enter.goList-enter-active {
-  opacity: 1;
-}
-
-.goList-leave {
-  opacity: 1;
   transition: all .2s linear;
   transform: translateX(-100%);
 }
 
-.goList-leave.goList-leave-active {
+.front-enter.front-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.front-leave {
+  opacity: 1;
+  transition: all .2s linear;
+  transform: translateX(0%);
+}
+
+.front-leave.front-leave-active {
   opacity: 0.01;
+  transform: translateX(100%);
 }

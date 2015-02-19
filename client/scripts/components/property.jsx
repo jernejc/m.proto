@@ -9,12 +9,11 @@ var PropertyComponent = React.createClass({
     mixins: [ Router.State ],
     statics: {
         willTransitionTo: function(transition, params, query) {
-            console.log("willTransitionTo property", transition, params, query);
+            console.log("willTransitionTo property");
         },
 
         willTransitionFrom: function(transition, component) {
-            console.log("willTransitionFrom property", transition, component);
-            LayoutStore.setCustomAnimation('goList');
+            LayoutStore.setCustomAnimation('front');
         }
     },
     render: function() {

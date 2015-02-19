@@ -7,7 +7,6 @@ var assign = require('object-assign');
 module.exports = {
 
 	getAll: function(direction) {
-		console.log('List actions, getAll');
 		
 		// To-do, implement AJAX call
 		/**

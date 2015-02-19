@@ -12,7 +12,6 @@ function getListState() {
     }
 }
 
-console.log('listActions.getAll()');
 listActions.getAll();
 
 var ListComponent = React.createClass({
