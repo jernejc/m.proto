@@ -17,7 +17,6 @@ var SideBarComponent = React.createClass({
     },
 
     render: function() {
-        console.log('sidebar render isOpen', this.state.isOpen)
         var cx = React.addons.classSet;
         var classString = cx({
             'sidebar': true,
@@ -34,7 +33,6 @@ var SideBarComponent = React.createClass({
     },
 
     _onChange: function() {
-        console.log('sidebar _onChange props:', getSidebarState());
         this.setState(getSidebarState());
     }
 
