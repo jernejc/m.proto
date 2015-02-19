@@ -32,7 +32,7 @@ var DefaultLayout = React.createClass({
 
         return (
         /* jshint ignore:start */
-        <div className="default">
+        <div className="default layout">
             <SideBarComponent />
             <div className={mainClasses}>
                 {this.props.children}

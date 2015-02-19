@@ -27,6 +27,15 @@ body {
     color: #333;
 }
 
+.layout {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  overflow: scroll;
+}
+
 a {
     color: #030303;
     text-decoration: none;
@@ -62,10 +71,6 @@ h1,h2,h3,h4,h5 {
 *   Layouts
 **/
 
-.default {
-    position: relative;
-    overflow: hidden;
-}
 
 /**
 *   Structure
@@ -227,41 +232,44 @@ h1,h2,h3,h4,h5 {
 **/
 
 /* index */
-.spotlight {
-    position: relative;
-    width: 100%;
-    background: #CCC;
-    left: 0px;
-    top: 0px;
-    padding: 5em 0em;
+.page.index{
 
-    .fp-search {
-        position: relative;
-        text-align: center;
-        width: 25em;
-        margin: 0 auto;
-    
-        .logo {
-            width: 20em;
-            display: block;
-            background: #FFF;
-            line-height: 6em;
-            margin: 0 auto 20px auto;
-            border: 1px solid #CCC;
-            
-        }
+  .spotlight {
+      position: relative;
+      width: 100%;
+      background: #CCC;
+      left: 0px;
+      top: 0px;
+      padding: 5em 0em;
 
-        .search {
-            width: 17em;
-            margin: 0 auto;
-        }
+      .fp-search {
+          position: relative;
+          text-align: center;
+          width: 25em;
+          margin: 0 auto;
 
-        .filter-btn {
-            padding: 1em;
-            background: #333;
-            color: #FFF;
-        }
-    }
+          .logo {
+              width: 20em;
+              display: block;
+              background: #FFF;
+              line-height: 6em;
+              margin: 0 auto 20px auto;
+              border: 1px solid #CCC;
+
+          }
+
+          .search {
+              width: 17em;
+              margin: 0 auto;
+          }
+
+          .filter-btn {
+              padding: 1em;
+              background: #333;
+              color: #FFF;
+          }
+      }
+  }
 }
 
 /* list */
@@ -381,46 +389,38 @@ h1,h2,h3,h4,h5 {
 
 /* property */
 .property-enter {
-    opacity: 0.01;
     transition: all .2s linear;
     transform: translateX(100%);
 }
 
 .property-enter.property-enter-active {
-    opacity: 1;
     transform: translateX(0%);
 }
 
 .property-leave {
-    opacity: 1;
     transition: all .2s linear;
     transform: translateX(0%);
 }
 
 .property-leave.property-leave-active {
-    opacity: 0.01;
     transform: translateX(-100%);
 }
 
 /* front */
 .front-enter {
-  opacity: 0.01;
   transition: all .2s linear;
   transform: translateX(-100%);
 }
 
 .front-enter.front-enter-active {
-  opacity: 1;
   transform: translateX(0%);
 }
 
 .front-leave {
-  opacity: 1;
   transition: all .2s linear;
   transform: translateX(0%);
 }
 
 .front-leave.front-leave-active {
-  opacity: 0.01;
   transform: translateX(100%);
 }

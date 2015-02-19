@@ -9,7 +9,7 @@ var StaticLayout = React.createClass({
     render: function() {
         return (
             /* jshint ignore:start */
-                <div className="layout default">
+                <div className="layout static">
                     <div className="main-container">
                         <a href="javascript:history.back();">back</a>
                         <div className="content">
