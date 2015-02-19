@@ -1,8 +1,11 @@
 'use strict';
 
 var React = require('react');
+var Navigation = require('react-router').Navigation;
 
-var DefaultComponent = React.createClass({
+var StaticLayout = React.createClass({
+    mixins: [Navigation],
+
     render: function() {
         return (
             /* jshint ignore:start */
@@ -19,4 +22,4 @@ var DefaultComponent = React.createClass({
     }
 });
 
-module.exports = DefaultComponent;
+module.exports = StaticLayout;

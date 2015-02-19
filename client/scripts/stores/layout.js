@@ -24,12 +24,15 @@ var mapLayoutsRoutes = {
 	filter: {
 		name: 'StaticLayout',
 		transitionName: 'filter',
-		component: Layouts.DefaultLayout
+		component: Layouts.StaticLayout
 	},
 	property: {
-		name: 'DefaultLayout',
+		name: 'StaticLayout',
 		transitionName: 'property',
-		component: Layouts.DefaultLayout
+		component: Layouts.StaticLayout
+	},
+	list: {
+
 	}
 }
 

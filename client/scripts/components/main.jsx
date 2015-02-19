@@ -12,9 +12,11 @@ var App = React.createClass({
         console.log('Route reverse', this.getRoutes().reverse()[0]);
         console.log('currentPage', name);
 
+
         return {
             currentLayout: LayoutStore.getCurrentLayout(name),
-            currentPage: name
+            currentPage: name,
+            customAnimation: 'none'
         }
     },
     getInitialState: function() {
@@ -29,9 +31,9 @@ var App = React.createClass({
         console.log('App state', this.state);
         return (
             <ReactCSSTransitionGroup component="div" transitionName={this.state.currentLayout.transitionName}>
-                <this.state.currentLayout.component className="layout" key={this.state.currentLayout.name}>
+                <this.state.currentLayout.component className="layout" key={this.state.currentLayout.name} customAnimation={this.state.customAnimation}>
                     <ReactCSSTransitionGroup component="div" transitionName={this.state.currentLayout.transitionName}>
-                        <RouteHandler className="page" key={this.state.currentPage} />
+                        <RouteHandler className="page" key={this.state.currentPage} customAnimation={this.state.customAnimation} />
                     </ReactCSSTransitionGroup>
                 </this.state.currentLayout.component>
             </ReactCSSTransitionGroup>

@@ -29,7 +29,7 @@ var ListItem = React.createClass({
 
     goToItem: function(e) {
         console.log("goToItem event", e);
-        this.transitionTo('property', {propertyId: e.currentTarget.id});
+        this.transitionTo('property', {propertyId: e.currentTarget.id}, {animation: 'something'});
     }
 
 });

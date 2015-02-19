@@ -14,7 +14,7 @@ var getState = function() {
     };
 };
 
-var DefaultComponent = React.createClass({
+var DefaultLayout = React.createClass({
     mixins: [pageStore.mixin, Router.State],
     componentDidMount: function() {
         pageStore.emitChange();
@@ -47,4 +47,4 @@ var DefaultComponent = React.createClass({
     }
 });
 
-module.exports = DefaultComponent;
+module.exports = DefaultLayout;

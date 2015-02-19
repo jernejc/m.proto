@@ -14,7 +14,7 @@ function getFilterState() {
 
 var filterComponent = React.createClass({
     mixins: [filterStore.mixin, Navigation],
-
+    
     getInitialState: function() {
         return getFilterState();
     },
