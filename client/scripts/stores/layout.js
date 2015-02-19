@@ -30,17 +30,35 @@ var mapLayoutsRoutes = {
 		name: 'StaticLayout',
 		transitionName: 'property',
 		component: Layouts.StaticLayout
-	},
-	list: {
-
 	}
 }
+
+var customAnimation = null;
 
 var LayoutStore = new Store({
 
 	getCurrentLayout: function(name) {
-		return mapLayoutsRoutes[name] || mapLayoutsRoutes['default'];
-	}
+        console.log(customAnimation);
+        if(customAnimation) {
+            console.log('animation name', customAnimation);
+            var customLayoutRoutes = mapLayoutsRoutes[name] || mapLayoutsRoutes['default'],
+                currentLayout = {
+                    name: customLayoutRoutes.name,
+                    transitionName: customAnimation,
+                    component: customLayoutRoutes.component
+                };
+            console.log('Current layout',currentLayout);
+            customAnimation = null;
+
+            return currentLayout;
+        }else{
+            console.log('no custom animation');
+		    return mapLayoutsRoutes[name] || mapLayoutsRoutes['default'];
+        }
+	},
+    setCustomAnimation: function(animationName){
+        customAnimation = animationName;
+    }
 
 });
 

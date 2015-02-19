@@ -24,7 +24,6 @@ var App = React.createClass({
         return this.getStoreData();
     },
     componentWillReceiveProps: function(){
-        console.log('componentWillReceiveProps', this.getInitialState());
         this.setState(this.getStoreData()) // creates a double refresh for some reason
     },
     render: function() {
@@ -33,7 +32,7 @@ var App = React.createClass({
             <ReactCSSTransitionGroup component="div" transitionName={this.state.currentLayout.transitionName}>
                 <this.state.currentLayout.component className="layout" key={this.state.currentLayout.name} customAnimation={this.state.customAnimation}>
                     <ReactCSSTransitionGroup component="div" transitionName={this.state.currentLayout.transitionName}>
-                        <RouteHandler className="page" key={this.state.currentPage} customAnimation={this.state.customAnimation} />
+                        <RouteHandler className="page" key={this.state.currentPage} />
                     </ReactCSSTransitionGroup>
                 </this.state.currentLayout.component>
             </ReactCSSTransitionGroup>
