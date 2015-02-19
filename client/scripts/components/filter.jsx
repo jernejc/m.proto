@@ -14,7 +14,7 @@ function getFilterState() {
 
 var filterComponent = React.createClass({
     mixins: [filterStore.mixin, Navigation],
-    
+
     getInitialState: function() {
         return getFilterState();
     },
@@ -70,7 +70,6 @@ var filterComponent = React.createClass({
     },
 
     _onChange: function() {
-        console.log('filter _onChange props:', getFilterState());
         this.setState(getFilterState());
     },
 
@@ -83,7 +82,6 @@ var filterComponent = React.createClass({
     },
 
     goToList: function() {
-        console.log('goToList transitionTo');
         this.transitionTo('list');
     }
 

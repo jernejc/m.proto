@@ -22,7 +22,6 @@ var SidebarComponent = React.createClass({
     },
 
     toggleSidebar: function() {
-        console.log('openSidebar')
         pageActions.toggleSidebar('left');
     },
 

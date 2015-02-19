@@ -4,10 +4,6 @@ var Navigation = require('react-router').Navigation;
 var ListItem = React.createClass({
     mixins: [Navigation],
 
-    componentDidMount: function() {
-        console.log('List item, componentDidMount');
-    },
-
     propTypes: {
         item: React.PropTypes.object.isRequired
     },
@@ -28,8 +24,7 @@ var ListItem = React.createClass({
     },
 
     goToItem: function(e) {
-        console.log("goToItem event", e);
-        this.transitionTo('property', {propertyId: e.currentTarget.id}, {animation: 'something'});
+        this.transitionTo('property', {propertyId: e.currentTarget.id});
     }
 
 });

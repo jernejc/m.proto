@@ -16,7 +16,6 @@ var PageStore = new Store({
 	},
 
 	getSidebarStatus: function() {
-		console.log('PageStore getSidebarStatus:', isSidebarOpen)
 		return isSidebarOpen;
 	}
 
@@ -25,16 +24,13 @@ var PageStore = new Store({
 PageStore.dispatcherToken = Dispatcher.register(function(payload) {
 
 	var action = payload.action;
-	console.log('PageStore Dispatcher payload: ', payload)
 
 	switch(action.actionType) {
 		case pageConstants.SET_CURRENT_PAGE:
-			console.log('PageStore action: SET_CURRENT_PAGE');
 			_page = action.page;
     		PageStore.emitChange();
 		break;
 		case pageConstants.TOGGLE_SIDEBAR:
-			console.log('PageStore action: TOGGLE_SIDEBAR');
 			isSidebarOpen = !isSidebarOpen;
 			PageStore.emitChange();
 		break;

@@ -30,7 +30,6 @@ var IndexComponent = React.createClass({
     },
 
     filter: function() {
-        console.log('go to filter');
         this.transitionTo('filter');
     }
 });

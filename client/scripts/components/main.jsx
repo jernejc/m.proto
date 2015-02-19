@@ -9,26 +9,20 @@ var App = React.createClass({
     mixins: [ LayoutStore.mixin, Router.State ],
     getStoreData: function() {
         var name = this.getRoutes().reverse()[0].name;
-        console.log('Route reverse', this.getRoutes().reverse()[0]);
-        console.log('currentPage', name);
-
 
         return {
             currentLayout: LayoutStore.getCurrentLayout(name),
-            currentPage: name,
-            customAnimation: 'none'
+            currentPage: name
         }
     },
     getInitialState: function() {
-        console.log('getInitialState');
         return this.getStoreData();
     },
     componentWillReceiveProps: function(){
-        console.log('componentWillReceiveProps', this.getInitialState());
         this.setState(this.getStoreData()) // creates a double refresh for some reason
     },
     render: function() {
-        console.log('App state', this.state);
+        console.log('Main.jsx state before render', this.state);
         return (
             <ReactCSSTransitionGroup component="div" transitionName={this.state.currentLayout.transitionName}>
                 <this.state.currentLayout.component className="layout" key={this.state.currentLayout.name} customAnimation={this.state.customAnimation}>
@@ -41,7 +35,6 @@ var App = React.createClass({
     },
 
     _onChange: function() {
-        console.log('App _onChange');
         this.setState(this.getStoreData())
     }
 });

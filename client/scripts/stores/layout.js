@@ -30,9 +30,6 @@ var mapLayoutsRoutes = {
 		name: 'StaticLayout',
 		transitionName: 'property',
 		component: Layouts.StaticLayout
-	},
-	list: {
-
 	}
 }
 
