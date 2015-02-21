@@ -12,13 +12,12 @@ var IndexComponent = React.createClass({
     statics: {
         willTransitionFrom: function(transition, component) {
             LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
+        },
+        willTransitionTo: function() {
+            setTimeout(function() {
+                document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
+            }, 1)
         }
-    },
-    componentDidMount: function() {
-        console.log('componentDidMount');
-        setTimeout(function() {
-            document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
-        }, 200)
     },
     render: function() {
         return (
