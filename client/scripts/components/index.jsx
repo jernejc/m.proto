@@ -1,14 +1,25 @@
 'use strict';
 
 var React = require('react');
+var LayoutStore = require('../stores/layout');
 var ListComponent = React.createFactory(require('./modules/list.jsx'));
 var TopBarComponent = React.createFactory(require('./modules/topbar.jsx'));
 var Button = React.createFactory(require('./modules/button.jsx'));
 var Navigation = require('react-router').Navigation;
 
 var IndexComponent = React.createClass({
-    mixins: [Navigation],
-
+    mixins: [LayoutStore.mixin, Navigation],
+    statics: {
+        willTransitionFrom: function(transition, component) {
+            LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
+        }
+    },
+    componentDidMount: function() {
+        console.log('componentDidMount');
+        setTimeout(function() {
+            document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
+        }, 200)
+    },
     render: function() {
         return (
             /* jshint ignore:start */

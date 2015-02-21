@@ -6,7 +6,7 @@ var Button = React.createFactory(require('./modules/button.jsx'));
 var LayoutStore = require('../stores/layout');
 
 var PropertyComponent = React.createClass({
-    mixins: [ Router.State ],
+    mixins: [ LayoutStore.mixin, Router.State ],
     statics: {
         willTransitionTo: function(transition, params, query) {
             console.log("willTransitionTo property");

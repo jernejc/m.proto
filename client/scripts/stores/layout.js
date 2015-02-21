@@ -22,9 +22,9 @@ var mapLayoutsRoutes = {
 		component: Layouts.StaticLayout
 	},
 	filter: {
-		name: 'StaticLayout',
+		name: 'DefaultLayout',
 		transitionName: 'filter',
-		component: Layouts.StaticLayout
+		component: Layouts.DefaultLayout
 	},
 	property: {
 		name: 'StaticLayout',
@@ -33,8 +33,8 @@ var mapLayoutsRoutes = {
 	}
 }
 
+var scrollPos = [];
 var customAnimation = null;
-
 var LayoutStore = new Store({
 
 	getCurrentLayout: function(name) {
@@ -53,8 +53,18 @@ var LayoutStore = new Store({
 		    return mapLayoutsRoutes[name] || mapLayoutsRoutes['default'];
         }
 	},
+	
     setCustomAnimation: function(animationName){
         customAnimation = animationName;
+    },
+
+    setScrollPos: function(component, pos) {
+    	scrollPos[component] = pos;
+    	console.log('setScrollPos scrollPos: ', scrollPos);
+    },
+
+    getScrollPos: function(component) {
+    	return scrollPos[component];
     }
 
 });
