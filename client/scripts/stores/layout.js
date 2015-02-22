@@ -7,7 +7,8 @@ var pageConstants = require('../constants/page');
 
 var Layouts = {
     DefaultLayout : React.createFactory(require('../components/layouts/default.jsx')),
-    StaticLayout : React.createFactory(require('../components/layouts/static.jsx'))
+    StaticLayout : React.createFactory(require('../components/layouts/static.jsx')),
+    BlankLayout: React.createFactory(require('../components/layouts/blank.jsx'))
 };
 
 var mapLayoutsRoutes = {
@@ -22,14 +23,19 @@ var mapLayoutsRoutes = {
 		component: Layouts.StaticLayout
 	},
 	filter: {
-		name: 'DefaultLayout',
+		name: 'BlankLayout',
 		transitionName: 'filter',
-		component: Layouts.DefaultLayout
+		component: Layouts.BlankLayout
 	},
 	property: {
 		name: 'StaticLayout',
 		transitionName: 'property',
 		component: Layouts.StaticLayout
+	},
+	list: {
+		name: 'DefaultLayout',
+		transitionName: 'list',
+		component: Layouts.DefaultLayout
 	}
 }
 
@@ -60,7 +66,6 @@ var LayoutStore = new Store({
 
     setScrollPos: function(component, pos) {
     	scrollPos[component] = pos;
-    	console.log('setScrollPos scrollPos: ', scrollPos);
     },
 
     getScrollPos: function(component) {

@@ -10,6 +10,14 @@ var ListStore = new Store({
 
 	getAll: function() {
 		return _items;
+	},
+
+	getProperty: function(id) {
+		var property = _items.filter(function(item){
+			return item.id === id;
+		});
+
+		return property[0];
 	}
 
 });

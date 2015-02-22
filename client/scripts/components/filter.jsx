@@ -1,20 +1,25 @@
 'use strict';
 
 var React = require('react/addons');
-var filterStore = require('../stores/filter');
+var FilterStore = require('../stores/filter');
+var LayoutStore = require('../stores/layout');
 var filterActions = require('../actions/filter');
 var Navigation = require('react-router').Navigation;
 var Button = React.createFactory(require('./modules/button.jsx'));
 
 function getFilterState() {
     return {
-        isOpen: filterStore.getStatus()
+        isOpen: FilterStore.getStatus()
     }
 }
 
 var filterComponent = React.createClass({
-    mixins: [filterStore.mixin, Navigation],
-
+    mixins: [FilterStore.mixin, Navigation],
+    statics: {
+        willTransitionFrom: function(transition, component) {
+            LayoutStore.setCustomAnimation('filter'); 
+        }
+    },
     getInitialState: function() {
         return getFilterState();
     },
@@ -29,7 +34,7 @@ var filterComponent = React.createClass({
         return (
             /* jshint ignore:start */
             <div className={classString}>
-                <h3>Filter properties <Button icon="x" className="close" onClick={this.toggle}/></h3>
+                <h3>Filter properties <Button icon="x" className="close" onClick={this.close}/></h3>
                 <div className="form">
                     <div className="row">
                         <input className="city" type="text" placeholder="Location (city, region..)" />
@@ -73,8 +78,8 @@ var filterComponent = React.createClass({
         this.setState(getFilterState());
     },
 
-    toggle: function() {
-        this.transitionTo('/');
+    close: function() {
+        history.back();
     },
 
     budget: function() {

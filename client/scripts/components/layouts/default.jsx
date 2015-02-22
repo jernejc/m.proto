@@ -4,6 +4,7 @@ var React = require('react/addons');
 var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 var pageStore = require('../../stores/page');
 var SideBarComponent = React.createFactory(require('../modules/sidebar.jsx'));
+var TopBarComponent = React.createFactory(require('../modules/topbar.jsx'));
 var Router = require('react-router');
 var RouteHandler = require('react-router').RouteHandler;
 
@@ -35,6 +36,7 @@ var DefaultLayout = React.createClass({
         <div className="default layout">
             <SideBarComponent />
             <div className={mainClasses}>
+                <TopBarComponent />
                 {this.props.children}
             </div>
         </div>
