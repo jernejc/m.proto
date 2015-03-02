@@ -22,7 +22,6 @@ var App = React.createClass({
         this.setState(this.getStoreData()) // creates a double refresh for some reason
     },
     render: function() {
-        //console.log('Main.jsx state before render', this.state);
         return (
             <ReactCSSTransitionGroup component="div" transitionName={this.state.currentLayout.transitionName}>
                 <this.state.currentLayout.component className="layout" key={this.state.currentLayout.name} customAnimation={this.state.customAnimation}>

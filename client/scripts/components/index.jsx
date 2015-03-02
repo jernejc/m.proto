@@ -1,13 +1,12 @@
 'use strict';
 
 var React = require('react');
-var LayoutStore = require('../stores/layout');
 var ListComponent = React.createFactory(require('./modules/list.jsx'));
 var Button = React.createFactory(require('./modules/button.jsx'));
 var Navigation = require('react-router').Navigation;
 
 var IndexComponent = React.createClass({
-    mixins: [LayoutStore.mixin, Navigation],
+    mixins: [Navigation],
     statics: {
         willTransitionFrom: function(transition, component) {
             LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);

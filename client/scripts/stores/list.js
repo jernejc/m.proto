@@ -19,7 +19,6 @@ var ListStore = new Store({
 
 		return property[0];
 	}
-
 });
 
 ListStore.dispatcherToken = Dispatcher.register(function(payload) {

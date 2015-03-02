@@ -16,9 +16,8 @@ var PageStore = new Store({
 	},
 
 	getSidebarStatus: function() {
-		return isSidebarOpen;
-	}
-
+        return isSidebarOpen;
+    }
 });
 
 PageStore.dispatcherToken = Dispatcher.register(function(payload) {
