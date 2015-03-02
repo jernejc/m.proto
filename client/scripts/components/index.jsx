@@ -12,7 +12,7 @@ var IndexComponent = React.createClass({
         willTransitionFrom: function(transition, component) {
             LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
         },
-        willTransitionTo: function() {
+        willTransitionTo: function(transition, component) {
             setTimeout(function() {
                 document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
             }, 1)

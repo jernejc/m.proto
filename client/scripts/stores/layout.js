@@ -70,7 +70,18 @@ var LayoutStore = new Store({
 
     getScrollPos: function(component) {
     	return scrollPos[component];
-    }
+    },
+
+    statics: {
+        willTransitionFrom: function(transition, component) {
+            LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
+        },
+        willTransitionTo: function() {
+            setTimeout(function() {
+                document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
+            }, 1)
+        }
+    },
 
 });
 

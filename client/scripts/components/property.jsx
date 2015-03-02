@@ -13,19 +13,20 @@ var PropertyComponent = React.createClass({
             LayoutStore.setCustomAnimation('front'); 
         }
     },
+    getInitialState: function() {
+        return {id: "1", title: "Title of the property", description: "Subtitle or short description for the property", price: "500.000", agent: "Some agent"};
+    },
     componentDidMount:function(){
         var item = ListStore.getProperty(this.getParams().propertyId);
-        console.log('property data', item);
         this.setState(item);
     },
     render: function() {
-        var item = this.props;
-
+        console.log('Property state', this.state);
         return (
             /* jshint ignore:start */
             <div className="page property">
                 <div className="row slider">
-                    <div className="price">500.000€</div>
+                    <div className="price">{this.state.price}€</div>
                     <div className="image"></div>
                     <div className="nav">
                         <span className="bullet"></span>

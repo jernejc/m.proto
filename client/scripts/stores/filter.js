@@ -9,7 +9,6 @@ var isOpen;
 var FilterStore = new Store({
 
 	getStatus: function() {
-		console.log('FilterStore getStatus:', isOpen)
 		return isOpen;
 	}
 
@@ -18,7 +17,6 @@ var FilterStore = new Store({
 FilterStore.dispatcherToken = Dispatcher.register(function(payload) {
 
 	var action = payload.action;
-	console.log('FilterStore Dispatcher payload: ', payload)
 
 	switch(action.actionType) {
 		case filterConstants.TOGGLE:
