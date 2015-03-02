@@ -18,14 +18,14 @@ var routes = (
     <Route name="app" path="/" handler={App} addHandlerKey={true}>
         <Route name="list" handler={ListPage} addHandlerKey={true}/>
         <Route name="dashboard" handler={Dashboard} addHandlerKey={true}/>
-        <Route name="property" path="property/:propertyId" handler={Property} />
+        <Route name="property" path="property/:propertyId" handler={Property}/>
         <Route name="filter" handler={Filter} addHandlerKey={true}/>
         <DefaultRoute handler={IndexPage}/>
     </Route>
 );
 
 Router.run(routes, function (Handler) {
-    React.render(<Handler/>, document.body);
+    React.render(<Handler />, document.body);
 });
 
 module.exports = routes;

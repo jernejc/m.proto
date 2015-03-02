@@ -3,14 +3,13 @@
 var React = require('react/addons');
 var listStore = require('../../stores/list');
 var listActions = require('../../actions/list');
-var LayoutStore = require('../../stores/layout');
 var Button = React.createFactory(require('../modules/button.jsx'));
 var ListItem = React.createFactory(require('../modules/listItem.jsx'));
+var TopBarComponent = React.createFactory(require('../modules/topbar.jsx'));
 
 function getListState() {
     return {
-        items: listStore.getAll(),
-        position: '0px'
+        items: listStore.getAll()
     }
 }
 
@@ -32,6 +31,7 @@ var ListComponent = React.createClass({
     getInitialState: function() {
         return getListState();
     },
+
     render: function() {
         var allItems = this.state.items;
         var items = [];
@@ -42,8 +42,11 @@ var ListComponent = React.createClass({
         
         return (
             /* jshint ignore:start */
-            <div className="items">
-                {items}
+            <div className="page list">
+                <TopBarComponent />
+                <div className="items">
+                    {items}
+                </div>  
             </div>
             /* jshint ignore:end */
         );

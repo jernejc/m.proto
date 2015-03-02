@@ -7,7 +7,8 @@ var pageConstants = require('../constants/page');
 
 var Layouts = {
     DefaultLayout : React.createFactory(require('../components/layouts/default.jsx')),
-    StaticLayout : React.createFactory(require('../components/layouts/static.jsx'))
+    StaticLayout : React.createFactory(require('../components/layouts/static.jsx')),
+    BlankLayout: React.createFactory(require('../components/layouts/blank.jsx'))
 };
 
 var mapLayoutsRoutes = {
@@ -22,19 +23,24 @@ var mapLayoutsRoutes = {
 		component: Layouts.StaticLayout
 	},
 	filter: {
-		name: 'StaticLayout',
+		name: 'BlankLayout',
 		transitionName: 'filter',
-		component: Layouts.StaticLayout
+		component: Layouts.BlankLayout
 	},
 	property: {
 		name: 'StaticLayout',
 		transitionName: 'property',
 		component: Layouts.StaticLayout
+	},
+	list: {
+		name: 'DefaultLayout',
+		transitionName: 'list',
+		component: Layouts.DefaultLayout
 	}
 }
 
+var scrollPos = [];
 var customAnimation = null;
-
 var LayoutStore = new Store({
 
 	getCurrentLayout: function(name) {
@@ -53,8 +59,17 @@ var LayoutStore = new Store({
 		    return mapLayoutsRoutes[name] || mapLayoutsRoutes['default'];
         }
 	},
+	
     setCustomAnimation: function(animationName){
         customAnimation = animationName;
+    },
+
+    setScrollPos: function(component, pos) {
+    	scrollPos[component] = pos;
+    },
+
+    getScrollPos: function(component) {
+    	return scrollPos[component];
     }
 
 });

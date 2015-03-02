@@ -31,11 +31,15 @@ var Store = function(methods) {
   this.mixin = {
 
     componentDidMount: function() {
-      self.addChangeListener(this._onChange);
+      if(this._onChange) {
+        self.addChangeListener(this._onChange);
+      }
     },
 
     componentWillUnmount: function() {
-      self.removeChangeListener(this._onChange);
+      if(this._onChange) {
+        self.removeChangeListener(this._onChange);
+      }
     }
 
   };
@@ -49,7 +53,6 @@ var Store = function(methods) {
   this.addChangeListener = function(callback) {
     this.on(CHANGE_EVENT, callback);
   };
-
 
   // Removes a change listener.
   this.removeChangeListener = function(callback) {

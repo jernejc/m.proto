@@ -36,6 +36,7 @@ var DefaultLayout = React.createClass({
             <SideBarComponent />
             <TopBarComponent />
             <div className={mainClasses}>
+                <TopBarComponent />
                 {this.props.children}
             </div>
         </div>

@@ -12,7 +12,9 @@ var StaticLayout = React.createClass({
             /* jshint ignore:start */
                 <div className="layout static">
                     <div className="main-container">
-                        <Button className="btn-back" icon="arrow-left" onClick={this.historyBack}></Button>
+                        <div className="topbar">
+                            <Button icon="arrow-left" onClick={this.back} className="back-btn" />
+                        </div>
                         <div className="content">
                             {this.props.children}
                         </div>
@@ -21,8 +23,9 @@ var StaticLayout = React.createClass({
             /* jshint ignore:end */
         );
     },
-    historyBack: function(){
-        history.back();
+
+    back: function(){
+        history.back()
     }
 });
 

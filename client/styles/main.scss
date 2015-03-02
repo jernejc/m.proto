@@ -1,7 +1,4 @@
-// Main Stylesheet
-
-// Box sizing partial styles:
-// Apply a natural box layout model to all elements
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 *,
 *:before,
@@ -12,18 +9,10 @@
     outline: 0;
 }
 
-// Injects all bower_component files automatically
-// bower:scss
-// endbower
-
-// Injects all import files automatically
-// [injector]
-// [endinjector]
-
 body {
     background: #FFF;
-    font-size: 12px;
-    font-family: Monaco, Consolas, "Courier New", monospace;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
     color: #333;
 }
 
@@ -61,15 +50,12 @@ input {
 h1,h2,h3,h4,h5 {
     margin: 0;
     padding: 0;
+    font-weight: 200;
 }
 
 /**
 *   Layouts
 **/
-
-button.btn-back {
-  margin: 1em;
-}
 
 
 /**
@@ -126,8 +112,12 @@ button.btn-back {
 }
 
 .filter {
-    position: relative;
+    position: absolute;
     background: #e2e2e2;
+    height: 100%;
+    bottom: 0px;
+    top: 0px;
+    width: 100%;
 
     h3 {
         background: #FFF;
@@ -316,6 +306,143 @@ button.btn-back {
         font-size: 1.1em;
         margin: 1.8em 1.8em -1.5em 1.8em;
         color: #333;
+        font-weight: 400;
+    }
+}
+
+/* property */
+.page.property {
+    .slider {
+        position: relative;
+        margin-top: 0;
+
+        .price {
+            position: absolute;
+            right: 0em;
+            top: 3em;
+            background: #333333;
+            color: #FFF;
+            padding: 1em;
+        }
+
+        .image {
+            background: #CCC;
+            min-height: 20em;
+            width: 100%;
+        }
+
+        .nav {
+            position: absolute;
+            bottom: 1em;
+            text-align: center;
+            left: 0px;
+            right: 0px;
+
+            .bullet {
+                background: #FFF;
+                border: 1px solid #666;
+                content: "";
+                width: 1em;
+                height: 1em;
+                display: inline-block;
+                border-radius: 50%;
+                margin-right: 0.2em;
+
+                &.active {
+                    background: #CCC;
+                    border: 1px solid #FFF;
+                }
+            }
+        }
+    }
+
+    .details {
+        .buttons {
+            text-align: center;
+            button {
+                padding: 1em 2.5em;
+                margin: 0 0.2em;
+
+                i {
+                    display: inline-block;
+                    width: 20%;
+                    margin-left: -10%;
+                    font-size: 1.3em;
+                    margin-right: 8%;
+                }
+
+                span {
+                    display: inline-block;
+                    width: 72%;
+                }
+
+                &.favorite {
+                    background: #efefef;
+                }
+            }
+        }
+    }
+
+    .tabs {
+        background: #CCC;
+        color: #FFF;
+
+        span {
+            padding: 1.5em 1em;
+            display: inline-block;
+            font-size: 1em;
+            color: #FFF;
+            position: relative;
+
+            &.active {
+                
+                &:after {
+                    position:absolute;
+                    bottom: 0px;
+                    left: 40%;
+                    content: " ";
+                    width: 0; 
+                    height: 0; 
+                    border-left: 0.7em solid transparent;
+                    border-right: 0.7em solid transparent;
+                    
+                    border-bottom: 0.7em solid white;
+                }
+            }
+        }
+    }
+
+    .content {
+        padding: 0.7em 1em;
+    }
+
+    .map {
+        margin-top: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .agent {
+        margin-bottom: 0;
+        padding: 1em;
+        border-top: 1px solid #CCC;
+        border-bottom: 1px solid #CCC;
+
+        .image {
+            width: 5em;
+            background: #CCC;
+            border-radius: 50%;
+            height: 5em;
+            float: left;
+            margin-right: 1.5em;
+        }
+
+        span {
+            margin: 0.8em 0em 0.5em;
+            display: inline-block;
+        }
     }
 }
 
@@ -368,9 +495,8 @@ button.btn-back {
 
 /* filter */
 .filter-enter {
+    transition: all .21s linear;
     opacity: 0.01;
-    transition: all .5s ease-in;
-    transform: translateY(0%);
 }
 
 .filter-enter.filter-enter-active {
@@ -378,9 +504,8 @@ button.btn-back {
 }
 
 .filter-leave {
+    transition: all .21s linear;
     opacity: 1;
-    transition: all .5s ease-in;
-    transform: translateY(100%);
 }
 
 .filter-leave.filter-leave-active {
