@@ -2,6 +2,7 @@
 
 var React = require('react');
 var ListComponent = React.createFactory(require('./modules/list.jsx'));
+var LayoutStore = require('../stores/layout.js');
 var Button = React.createFactory(require('./modules/button.jsx'));
 var Navigation = require('react-router').Navigation;
 

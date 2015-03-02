@@ -43,7 +43,6 @@ var ListComponent = React.createClass({
         return (
             /* jshint ignore:start */
             <div className="page list">
-                <TopBarComponent />
                 <div className="items">
                     {items}
                 </div>  
