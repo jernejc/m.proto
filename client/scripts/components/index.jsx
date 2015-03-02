@@ -2,18 +2,20 @@
 
 var React = require('react');
 var ListComponent = React.createFactory(require('./modules/list.jsx'));
-var TopBarComponent = React.createFactory(require('./modules/topbar.jsx'));
 var Button = React.createFactory(require('./modules/button.jsx'));
 var Navigation = require('react-router').Navigation;
 
 var IndexComponent = React.createClass({
     mixins: [Navigation],
-
+    statics: {
+        willTransitionFrom: function(transition, component){
+            document.querySelector('.layout').style.top = -window.scrollY + 'px';
+        }
+    },
     render: function() {
         return (
             /* jshint ignore:start */
             <div className="page index">
-                <TopBarComponent />
                 <div className="spotlight">
                     <div className="fp-search">
                         <span className="logo">Logo & Slogan or something</span>

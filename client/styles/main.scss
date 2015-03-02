@@ -28,12 +28,8 @@ body {
 }
 
 .layout {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  overflow: scroll;
+    position: absolute;
+    width: 100%;
 }
 
 a {
@@ -70,6 +66,10 @@ h1,h2,h3,h4,h5 {
 /**
 *   Layouts
 **/
+
+button.btn-back {
+  margin: 1em;
+}
 
 
 /**

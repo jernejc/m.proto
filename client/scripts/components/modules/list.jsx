@@ -8,7 +8,8 @@ var ListItem = React.createFactory(require('../modules/listItem.jsx'));
 
 function getListState() {
     return {
-        items: listStore.getAll()
+        items: listStore.getAll(),
+        position: '0px'
     }
 }
 
@@ -20,7 +21,6 @@ var ListComponent = React.createClass({
     getInitialState: function() {
         return getListState();
     },
-
     render: function() {
         var allItems = this.state.items;
         var items = [];

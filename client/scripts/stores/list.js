@@ -11,7 +11,6 @@ var ListStore = new Store({
 	getAll: function() {
 		return _items;
 	}
-
 });
 
 ListStore.dispatcherToken = Dispatcher.register(function(payload) {

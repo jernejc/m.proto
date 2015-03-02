@@ -8,10 +8,6 @@ var LayoutStore = require('../stores/layout');
 var PropertyComponent = React.createClass({
     mixins: [ Router.State ],
     statics: {
-        willTransitionTo: function(transition, params, query) {
-            console.log("willTransitionTo property");
-        },
-
         willTransitionFrom: function(transition, component) {
             LayoutStore.setCustomAnimation('front');
         }

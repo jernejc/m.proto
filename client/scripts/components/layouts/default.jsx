@@ -1,9 +1,9 @@
   'use strict';
 
 var React = require('react/addons');
-var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 var pageStore = require('../../stores/page');
 var SideBarComponent = React.createFactory(require('../modules/sidebar.jsx'));
+var TopBarComponent = React.createFactory(require('../modules/topbar.jsx'));
 var Router = require('react-router');
 var RouteHandler = require('react-router').RouteHandler;
 
@@ -14,6 +14,7 @@ var getState = function() {
     };
 };
 
+
 var DefaultLayout = React.createClass({
     mixins: [pageStore.mixin, Router.State],
     componentDidMount: function() {
@@ -23,17 +24,17 @@ var DefaultLayout = React.createClass({
         return getState();
     },
     render: function() {
-        var name = this.getRoutes().reverse()[0].name;
-        var cx = React.addons.classSet;
-        var mainClasses = cx({
-            'main-container': true,
-            'left': this.state.isSidebarOpen
-        });
+        var cx = React.addons.classSet,
+            mainClasses = cx({
+                'main-container': true,
+                'left': this.state.isSidebarOpen
+            });
 
         return (
         /* jshint ignore:start */
         <div className="default layout">
             <SideBarComponent />
+            <TopBarComponent />
             <div className={mainClasses}>
                 {this.props.children}
             </div>
