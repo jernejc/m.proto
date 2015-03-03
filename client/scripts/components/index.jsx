@@ -46,7 +46,6 @@ var IndexComponent = React.createClass({
                 </div>
                 <ListComponent />
                 <Interchange>
-                    <p>medium content</p>
                     <Map media="medium" initialZoom={10} initialCenter={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
                         <Marker onClick={handleClick} position={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)} />
                         <OverlayView style={{backgroundColor: '#fff'}} position={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
