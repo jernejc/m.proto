@@ -42,11 +42,9 @@ var ListComponent = React.createClass({
         
         return (
             /* jshint ignore:start */
-            <div className="page list">
-                <div className="items">
-                    {items}
-                </div>  
-            </div>
+            <div className="items">
+                {items}
+            </div>  
             /* jshint ignore:end */
         );
     },

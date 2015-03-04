@@ -6,7 +6,7 @@ var LayoutStore = require('../stores/layout.js');
 var Button = React.createFactory(require('./modules/button.jsx'));
 var Navigation = require('react-router').Navigation;
 
-var Interchange = require('react-foundation-apps/lib/interchange/index.jsx');
+var MediaQuery = require('react-responsive');
 
 var ReactGoogleMaps = require('react-googlemaps');
 var GoogleMapsAPI = window.google.maps;
@@ -44,15 +44,14 @@ var IndexComponent = React.createClass({
                         </div>
                     </div>
                 </div>
-                <ListComponent />
-                <Interchange>
-                    <Map media="medium" initialZoom={10} initialCenter={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
-                        <Marker onClick={handleClick} position={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)} />
-                        <OverlayView style={{backgroundColor: '#fff'}} position={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
-                            <p>Some content</p>
-                        </OverlayView>
-                    </Map>
-                </Interchange>
+                <div className="list">
+                    <ListComponent />
+                    <MediaQuery minDeviceWidth={768} id="map">
+                        <Map className="map-canvas" initialZoom={10} initialCenter={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
+                            <Marker onClick={handleClick} position={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)} />
+                        </Map>
+                    </MediaQuery>
+                </div>
             </div>
             /* jshint ignore:end */
         )

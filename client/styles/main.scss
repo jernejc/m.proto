@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700');
 @import "_settings";
 @import "../bower_components/foundation-apps/scss/foundation";
 
@@ -271,6 +271,15 @@ h1,h2,h3,h4,h5 {
 
 /* list */
 
+.list {
+    position: relative
+}
+
+.items {
+    display: inline-block;
+    width: 100%;
+}
+
 .item {
     margin: 2em 0em;
 
@@ -314,6 +323,34 @@ h1,h2,h3,h4,h5 {
         margin: 1.8em 1.8em -1.5em 1.8em;
         color: #333;
         font-weight: 400;
+    }
+}
+
+/* map */
+
+#map {
+    width: 50%;
+    display: inline-block;
+    min-height: 45em;
+    overflow: hidden;
+    position: relative;
+
+    & > div {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .map-canvas {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 }
 
@@ -449,6 +486,22 @@ h1,h2,h3,h4,h5 {
         span {
             margin: 0.1em 0em 0.5em;
             display: inline-block;
+        }
+    }
+}
+
+/**
+*   Media Queries
+**/
+
+@media screen and (min-width: 768px) {
+    .items {
+        width: 50%;
+
+        .item {
+            width: 47%;
+            display: inline-block;
+            margin: 0.5em;
         }
     }
 }
