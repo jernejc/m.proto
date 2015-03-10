@@ -46,13 +46,25 @@ var PropertyComponent = React.createClass({
                         <Button text="Contact" icon="telephone" />
                     </div>
                 </div>
-                <div className="row tabs">
-                    <span className="active">Description</span>
-                    <span>Details</span>
-                    <span>Other</span>
-                </div>
-                <div className="row content">
-                    Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.
+
+                <ul className="tabs" data-tab>
+                    <li class="tab-title active"><a href="#panel1">Description</a></li>
+                    <li class="tab-title"><a href="#panel1">Details</a></li>
+                    <li class="tab-title"><a href="#panel1">Other</a></li>
+                </ul>
+                <div class="tabs-content">
+                    <div class="content active" id="panel1">
+                        <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </div>
+                    <div class="content" id="panel2">
+                       <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </div>
+                    <div class="content" id="panel3">
+                       <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </div>
+                    <div class="content" id="panel4">
+                       <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </div>
                 </div>
                 <div className="row agent">
                     <div className="image"></div>
