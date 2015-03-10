@@ -5,7 +5,6 @@ var ListComponent = React.createFactory(require('./modules/list.jsx'));
 var LayoutStore = require('../stores/layout.js');
 var Button = React.createFactory(require('./modules/button.jsx'));
 var Navigation = require('react-router').Navigation;
-
 var MediaQuery = require('react-responsive');
 
 var ReactGoogleMaps = require('react-googlemaps');
@@ -32,8 +31,6 @@ var IndexComponent = React.createClass({
         }
     },
     render: function() {
-
-
         return (
             /* jshint ignore:start */
             <div className="page index">
