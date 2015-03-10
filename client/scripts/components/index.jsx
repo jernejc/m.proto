@@ -23,15 +23,17 @@ var IndexComponent = React.createClass({
     mixins: [Navigation],
     statics: {
         willTransitionFrom: function(transition, component) {
-            LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
+            LayoutStore.setScrollPos('index', document.querySelector('.offer-list').scrollTop);
         },
         willTransitionTo: function(transition, component) {
             setTimeout(function() {
-                document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
+                document.querySelector('.offer-list').scrollTop = LayoutStore.getScrollPos('index');
             }, 1)
         }
     },
     render: function() {
+
+
         return (
             /* jshint ignore:start */
             <div className="page index">
