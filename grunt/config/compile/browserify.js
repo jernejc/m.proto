@@ -7,9 +7,10 @@ var taskConfig = function(grunt) {
   grunt.config.set('browserify', {
     server: {
       options: {
-        transform:  [ require('grunt-react').browserify ],
+        transform:  [ require('grunt-react').browserify, require('reactify') ],
         browserifyOptions: {
-          debug: true
+          debug: true,
+          extensions: ['.js', '.json', '.jsx']
         },
         watch: true
       },
@@ -19,9 +20,10 @@ var taskConfig = function(grunt) {
     },
     dist: {
       options: {
-        transform:  [ require('grunt-react').browserify ],
+        transform:  [ require('grunt-react').browserify, require('reactify') ],
         browserifyOptions: {
-          debug: true
+          debug: true,
+          extensions: ['.js', '.json', '.jsx']
         },
         preBundleCB: function(b) {
           // Minify code
@@ -37,9 +39,10 @@ var taskConfig = function(grunt) {
     },
     test: {
       options: {
-        transform:  [ require('grunt-react').browserify ],
+        transform:  [ require('grunt-react').browserify, require('reactify') ],
         browserifyOptions: {
-          debug: true
+          debug: true,
+          extensions: ['.js', '.json', '.jsx']
         },
         watch: true
       },

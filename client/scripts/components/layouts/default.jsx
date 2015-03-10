@@ -23,6 +23,13 @@ var DefaultLayout = React.createClass({
     getInitialState: function() {
         return getState();
     },
+    renderChildren: function () {
+        return React.Children.map(this.props.children, function (child) {
+            return React.addons.cloneWithProps(child, {
+                className: 'row'
+            })
+        }.bind(this))
+    },
     render: function() {
         var cx = React.addons.classSet,
             mainClasses = cx({
@@ -34,9 +41,9 @@ var DefaultLayout = React.createClass({
         /* jshint ignore:start */
         <div className="default layout">
             <SideBarComponent />
-            <TopBarComponent />
             <div className={mainClasses}>
-                {this.props.children}
+                <TopBarComponent />
+                {this.renderChildren()}
             </div>
         </div>
         /* jshint ignore:end */

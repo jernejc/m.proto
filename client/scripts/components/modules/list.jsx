@@ -42,9 +42,9 @@ var ListComponent = React.createClass({
         
         return (
             /* jshint ignore:start */
-            <div className="items">
+            <ul className="items">
                 {items}
-            </div>
+            </ul>
             /* jshint ignore:end */
         );
     },

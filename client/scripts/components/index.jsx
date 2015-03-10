@@ -38,14 +38,16 @@ var IndexComponent = React.createClass({
                 <div className="spotlight">
                     <div className="fp-search">
                         <span className="logo">Logo & Slogan or something</span>
-                        <div className="row">
+                        <div>
                             <input type="text" className="search" placeholder="City, town, region.." />
                             <Button className="filter-btn" icon="magnifying-glass" onClick={this.filter} />
                         </div>
                     </div>
                 </div>
-                <div className="list">
-                    <ListComponent />
+                <div className="offer-listing">
+                    <div className="offer-list">
+                        <ListComponent />
+                    </div>
                     <MediaQuery minDeviceWidth={768} id="map">
                         <Map className="map-canvas" initialZoom={10} initialCenter={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
                             <Marker onClick={handleClick} position={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)} />

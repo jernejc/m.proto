@@ -12,14 +12,14 @@ var ListItem = React.createClass({
         var item = this.props.item;
 
         return (
-            <div className="item" onClick={this.goToItem} id={item.id}>
+            <li className="item" onClick={this.goToItem} id={item.id}>
                 <div className="image">
                     <span className="price">{item.price}€</span>
                     <span className="agent">{item.agent}</span>
                 </div>
                 <h2>{item.title}</h2>
                 <h3>{item.description}</h3>
-            </div>
+            </li>
         );
     },
 
