@@ -19,12 +19,9 @@ var PropertyComponent = React.createClass({
     },
     componentDidMount:function(){
         var item = ListStore.getProperty(this.getParams().propertyId);
-
-        console.log('tabs', this.refs.tabs.getDOMNode());
         this.setState(item);
     },
     render: function() {
-        console.log('Property state', this.state);
         return (
             /* jshint ignore:start */
             <div className="page property">
@@ -50,7 +47,7 @@ var PropertyComponent = React.createClass({
                     </div>
                 </div>
 
-                <Tabs>
+                <Tabs ref="tabs">
                     <Tabs.Tab title='Description'>
                         <p>1 Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
                     </Tabs.Tab>
