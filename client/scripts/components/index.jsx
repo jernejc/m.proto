@@ -5,7 +5,6 @@ var ListComponent = React.createFactory(require('./modules/list.jsx'));
 var LayoutStore = require('../stores/layout.js');
 var Button = React.createFactory(require('./modules/button.jsx'));
 var Navigation = require('react-router').Navigation;
-
 var MediaQuery = require('react-responsive');
 
 var ReactGoogleMaps = require('react-googlemaps');
@@ -23,11 +22,11 @@ var IndexComponent = React.createClass({
     mixins: [Navigation],
     statics: {
         willTransitionFrom: function(transition, component) {
-            LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
+            LayoutStore.setScrollPos('index', document.querySelector('.offer-list').scrollTop);
         },
         willTransitionTo: function(transition, component) {
             setTimeout(function() {
-                document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
+                document.querySelector('.offer-list').scrollTop = LayoutStore.getScrollPos('index');
             }, 1)
         }
     },
