@@ -5,6 +5,7 @@ var Router = require('react-router');
 var Button = React.createFactory(require('./modules/button.jsx'));
 var LayoutStore = require('../stores/layout');
 var ListStore = require('../stores/list');
+var Tabs = require('./modules/foundation/tabs');
 
 var PropertyComponent = React.createClass({
     mixins: [ LayoutStore.mixin, Router.State ],
@@ -18,6 +19,8 @@ var PropertyComponent = React.createClass({
     },
     componentDidMount:function(){
         var item = ListStore.getProperty(this.getParams().propertyId);
+
+        console.log('tabs', this.refs.tabs.getDOMNode());
         this.setState(item);
     },
     render: function() {
@@ -47,25 +50,18 @@ var PropertyComponent = React.createClass({
                     </div>
                 </div>
 
-                <ul className="tabs" data-tab>
-                    <li class="tab-title active"><a href="#panel1">Description</a></li>
-                    <li class="tab-title"><a href="#panel1">Details</a></li>
-                    <li class="tab-title"><a href="#panel1">Other</a></li>
-                </ul>
-                <div class="tabs-content">
-                    <div class="content active" id="panel1">
-                        <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
-                    </div>
-                    <div class="content" id="panel2">
-                       <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
-                    </div>
-                    <div class="content" id="panel3">
-                       <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
-                    </div>
-                    <div class="content" id="panel4">
-                       <p>Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
-                    </div>
-                </div>
+                <Tabs>
+                    <Tabs.Tab title='Description'>
+                        <p>1 Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </Tabs.Tab>
+                    <Tabs.Tab title='Details'>
+                        <p>2 Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </Tabs.Tab>
+                    <Tabs.Tab title='Other'>
+                        <p>3 Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </Tabs.Tab>
+                </Tabs>
+
                 <div className="row agent">
                     <div className="image"></div>
                     <span>Agent Info</span><br />

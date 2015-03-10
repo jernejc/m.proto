@@ -365,7 +365,7 @@ h1,h2,h3,h4,h5 {
         .price {
             position: absolute;
             right: 0em;
-            top: 3em;
+            top: 7em;
             background: #333333;
             color: #FFF;
             padding: 1em;
@@ -403,6 +403,7 @@ h1,h2,h3,h4,h5 {
     }
 
     .details {
+        margin: 1em 0em;
         .buttons {
             text-align: center;
             button {
@@ -437,15 +438,20 @@ h1,h2,h3,h4,h5 {
         }
     }
 
+    .tabs {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
     .agent {
         margin-bottom: 0;
         padding: 1em;
-        border-top: 1px solid #CCC;
-        border-bottom: 1px solid #CCC;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
 
         .image {
             width: 5em;
-            background: #CCC;
+            background: #eee;
             border-radius: 50%;
             height: 5em;
             float: left;
