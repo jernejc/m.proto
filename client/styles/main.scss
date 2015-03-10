@@ -3,7 +3,6 @@
 @import "_settings";
 @import "../bower_components/foundation/scss/foundation";
 
-
 *,
 *:before,
 *:after {
@@ -428,39 +427,6 @@ h1,h2,h3,h4,h5 {
                 }
             }
         }
-    }
-
-    .tabs {
-        background: #CCC;
-        color: #FFF;
-
-        span {
-            padding: 1.5em 1em;
-            display: inline-block;
-            font-size: 1em;
-            color: #FFF;
-            position: relative;
-
-            &.active {
-                
-                &:after {
-                    position:absolute;
-                    bottom: 0px;
-                    left: 40%;
-                    content: " ";
-                    width: 0; 
-                    height: 0; 
-                    border-left: 0.7em solid transparent;
-                    border-right: 0.7em solid transparent;
-                    
-                    border-bottom: 0.7em solid white;
-                }
-            }
-        }
-    }
-
-    .content {
-        padding: 0.7em 1em;
     }
 
     .map {
