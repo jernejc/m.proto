@@ -2,26 +2,14 @@
 
 var React = require('react/addons');
 var pageStore = require('../../stores/page');
-var Snap = require('./snap');
 
-
-function getSidebarState() {
-    return {
-        isOpen: pageStore.getSidebarStatus()
-    }
-}
 
 var SideBarComponent = React.createClass({
     mixins: [pageStore.mixin],
-
-    getInitialState: function() {
-        return getSidebarState();
-    },
     render: function() {
         var cx = React.addons.classSet;
         var classString = cx({
-            'sidebar': true,
-            'open': this.state.isOpen
+            'sidebar': true
         });
 
         return (
@@ -33,10 +21,6 @@ var SideBarComponent = React.createClass({
             </ul>
             /* jshint ignore:end */
         );
-    },
-
-    _onChange: function() {
-        this.setState(getSidebarState());
     }
 
 });

@@ -204,6 +204,10 @@ h1,h2,h3,h4,h5 {
         padding: 5em 0em;
         top: $topbar-height;
 
+        @media #{$small-only} {
+            position: relative;
+        }
+
         .fp-search {
             position: relative;
             text-align: center;
@@ -222,7 +226,11 @@ h1,h2,h3,h4,h5 {
 
             .search {
                 width: 17em;
-                margin: 0 auto;
+                display: inline-block
+            }
+
+            button {
+                padding: 0.5em 1em;
             }
         }
     }
@@ -237,6 +245,11 @@ h1,h2,h3,h4,h5 {
   bottom: 0px;
   overflow: hidden;
   @include  grid-row();
+
+  @media #{$small-only} {
+    position: relative;
+    top: 6em;
+  }
   .offer-list{
     position: relative;
     height: 100%;
@@ -377,7 +390,9 @@ h1,h2,h3,h4,h5 {
         margin: 1em 0em;
         .buttons {
             text-align: center;
-
+            button {
+                margin: 0 0.5em;
+            }
         }
     }
 

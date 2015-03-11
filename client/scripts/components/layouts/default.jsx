@@ -6,7 +6,8 @@ var SideBarComponent = React.createFactory(require('../modules/sidebar.jsx'));
 var TopBarComponent = React.createFactory(require('../modules/topbar.jsx'));
 var Router = require('react-router');
 var RouteHandler = require('react-router').RouteHandler;
-  var Snap = require('../modules/snap');
+var SnapContent = require('../../libs/snap/SnapContent.jsx');
+var SnapDrawerLeft = require('../../libs/snap/SnapDrawerLeft.jsx');
 
 var getState = function() {
     return {
@@ -19,10 +20,6 @@ var getState = function() {
 var DefaultLayout = React.createClass({
     mixins: [pageStore.mixin, Router.State],
     componentDidMount: function() {
-        new Snap({
-            element: document.querySelector('.snap-content'),
-            disable: 'right'
-        });
         pageStore.emitChange();
     },
     getInitialState: function() {
@@ -39,14 +36,14 @@ var DefaultLayout = React.createClass({
         /* jshint ignore:start */
         <div className="default layout">
             <div className='snap-drawers'>
-                <div className='snap-drawer snap-drawer-left'>
+                <SnapDrawerLeft>
                     <SideBarComponent />
-                </div>
+                </SnapDrawerLeft>
             </div>
-            <div className="snap-content">
+            <SnapContent>
                 <TopBarComponent />
                 {this.props.children}
-            </div>
+            </SnapContent>
         </div>
         /* jshint ignore:end */
         );

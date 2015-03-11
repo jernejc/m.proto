@@ -48,7 +48,7 @@ var IndexComponent = React.createClass({
                         <ListComponent />
                     </div>
                     <MediaQuery minDeviceWidth={768} id="map">
-                        <Map className="map-canvas" initialZoom={10} initialCenter={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
+                        <Map className="map-canvas" initialZoom={10} onClick={handleClick} initialCenter={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)}>
                             <Marker onClick={handleClick} position={new GoogleMapsAPI.LatLng(-41.2864, 174.7762)} />
                         </Map>
                     </MediaQuery>
