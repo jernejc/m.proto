@@ -20,17 +20,25 @@ var SnapContent = React.createClass({
     },
     componentDidMount: function() {
         console.log('componentDidMount SnapContent');
-        snapper = new Snap({
-            element: this.getDOMNode(),
-            disable: 'right'
-        });
+        if(snapper == null) {
+            snapper = new Snap({
+                element: this.getDOMNode(),
+                disable: 'right',
+                tapToClose: false,
+                transitionSpeed: 0.3,
+                hyperextensible: false
+            });
+        }
+    },
+    componentWillUnmount: function(){
+        snapper = null;
     },
     render: function() {
         console.log('render SnapContent: ', snapper);
 
         if(snapper != null) {
             if(this.state.isOpen){
-                snapper.expand('left');
+                snapper.open('left');
             } else {
                 snapper.close();
             }
@@ -45,7 +53,9 @@ var SnapContent = React.createClass({
 
     _onChange: function() {
         this.setState(getSidebarState());
-    }
+    },
+
+
 });
 
 module.exports = SnapContent;

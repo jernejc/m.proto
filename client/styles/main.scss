@@ -89,8 +89,8 @@ h1,h2,h3,h4,h5 {
 }
 
 .topbar {
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 3;
     left: 0px;
     right: 0px;
     height: $topbar-height;
@@ -112,9 +112,13 @@ h1,h2,h3,h4,h5 {
     h3 {
         background: #FFF;
         position: relative;
-        line-height: 4em;
+        line-height: 2.4em;
         text-align: center;
 
+    }
+
+    .row {
+        margin: 0.5em 0em;
     }
 
     .form {
@@ -140,6 +144,9 @@ h1,h2,h3,h4,h5 {
                 margin-bottom: 0.2em;
 
                 button {
+                    font-size: 0.8em;
+                    margin: 0;
+
                     &.less {
                         float: right;
                     }
@@ -179,9 +186,8 @@ h1,h2,h3,h4,h5 {
         .submit {
             width: 100%;
             padding: 1em;
-            background: #666;
-            color: #FFF;
-        }
+            margin: 0.5em 0 0;
+         }
     }
 }
 
@@ -199,7 +205,6 @@ h1,h2,h3,h4,h5 {
     .spotlight {
         @include  grid-row();
         position: absolute;
-        height: 350px;
         background: #CCC;
         padding: 5em 0em;
         top: $topbar-height;
@@ -215,18 +220,19 @@ h1,h2,h3,h4,h5 {
             margin: 0 auto;
 
             .logo {
-                width: 20em;
+                width: 100%;
                 display: block;
                 background: #FFF;
-                line-height: 6em;
+                line-height: 7em;
                 margin: 0 auto 20px auto;
                 border: 1px solid #CCC;
 
             }
 
             .search {
-                width: 17em;
-                display: inline-block
+                width: 80%;
+                display: inline-block;
+                padding:0.5em;
             }
 
             button {
@@ -241,7 +247,7 @@ h1,h2,h3,h4,h5 {
 
 .offer-listing {
   position: absolute;
-  top: 450px;
+  top: 30em;
   bottom: 0px;
   overflow: hidden;
   @include  grid-row();

@@ -4,6 +4,7 @@ var React = require('react');
 var ListComponent = React.createFactory(require('./modules/list.jsx'));
 var LayoutStore = require('../stores/layout.js');
 var Button = React.createFactory(require('./modules/button.jsx'));
+var Spotlight = React.createFactory(require('./modules/spotlight.jsx'));
 var Navigation = require('react-router').Navigation;
 var MediaQuery = require('react-responsive');
 
@@ -22,27 +23,22 @@ var IndexComponent = React.createClass({
     mixins: [Navigation],
     statics: {
         willTransitionFrom: function(transition, component) {
-            LayoutStore.setScrollPos('index', document.querySelector('.offer-list').scrollTop);
+            LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
         },
         willTransitionTo: function(transition, component) {
             setTimeout(function() {
-                document.querySelector('.offer-list').scrollTop = LayoutStore.getScrollPos('index');
+                document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
             }, 1)
         }
+    },
+    componentWillMount: function(){
+        window.addEventListener('scroll', this.onScroll, false);
     },
     render: function() {
         return (
             /* jshint ignore:start */
             <div className="page index">
-                <div className="spotlight">
-                    <div className="fp-search">
-                        <span className="logo">Logo & Slogan or something</span>
-                        <div>
-                            <input type="text" className="search" placeholder="City, town, region.." />
-                            <Button className="filter-btn" icon="magnifying-glass" onClick={this.filter} />
-                        </div>
-                    </div>
-                </div>
+                <Spotlight />
                 <div className="offer-listing">
                     <div className="offer-list">
                         <ListComponent />
@@ -60,7 +56,12 @@ var IndexComponent = React.createClass({
 
     filter: function() {
         this.transitionTo('filter');
-    }
+    },
+
+    onScroll: function() {
+
+    }   
+
 });
 
 module.exports = IndexComponent;
