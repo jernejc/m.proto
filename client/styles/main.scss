@@ -392,6 +392,20 @@ h1,h2,h3,h4,h5 {
     .tabs {
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
+
+        .tab-title {
+            a {
+                padding: 1rem 1.8rem;
+            }
+        }
+    }
+
+    .tabs-content {
+        margin: 0.5rem 0rem;
+
+        p {
+            margin: 0;
+        }
     }
 
     .agent {
@@ -410,8 +424,13 @@ h1,h2,h3,h4,h5 {
         }
 
         span {
-            margin: 0.1em 0em 0.5em;
+            margin: 0.1rem 0rem 0.5rem;
             display: inline-block;
+            font-size: 1rem;
+        }
+
+        small {
+            font-size: 0.85rem;
         }
     }
 }
