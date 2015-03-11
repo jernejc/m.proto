@@ -5,6 +5,7 @@ var Router = require('react-router');
 var Button = React.createFactory(require('./modules/button.jsx'));
 var LayoutStore = require('../stores/layout');
 var ListStore = require('../stores/list');
+var Tabs = require('./modules/foundation/tabs');
 
 var PropertyComponent = React.createClass({
     mixins: [ LayoutStore.mixin, Router.State ],
@@ -21,7 +22,6 @@ var PropertyComponent = React.createClass({
         this.setState(item);
     },
     render: function() {
-        console.log('Property state', this.state);
         return (
             /* jshint ignore:start */
             <div className="page property">
@@ -46,14 +46,19 @@ var PropertyComponent = React.createClass({
                         <Button text="Contact" icon="telephone" />
                     </div>
                 </div>
-                <div className="row tabs">
-                    <span className="active">Description</span>
-                    <span>Details</span>
-                    <span>Other</span>
-                </div>
-                <div className="row content">
-                    Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.
-                </div>
+
+                <Tabs ref="tabs">
+                    <Tabs.Tab title='Description'>
+                        <p>1 Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </Tabs.Tab>
+                    <Tabs.Tab title='Details'>
+                        <p>2 Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </Tabs.Tab>
+                    <Tabs.Tab title='Other'>
+                        <p>3 Integer vitae dolor rhoncus erat mattis lobortis. Proin hendrerit dolor luctus, vulputate eros at, elementum ipsum. Phasellus eget erat ornare, egestas sem vitae.</p>
+                    </Tabs.Tab>
+                </Tabs>
+
                 <div className="row agent">
                     <div className="image"></div>
                     <span>Agent Info</span><br />
