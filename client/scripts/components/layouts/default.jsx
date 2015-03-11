@@ -40,11 +40,9 @@ var DefaultLayout = React.createClass({
         return (
         /* jshint ignore:start */
         <div className="default layout">
+            <TopBarComponent />
+            {this.renderChildren()}
             <SideBarComponent />
-            <div className={mainClasses}>
-                <TopBarComponent />
-                {this.renderChildren()}
-            </div>
         </div>
         /* jshint ignore:end */
         );

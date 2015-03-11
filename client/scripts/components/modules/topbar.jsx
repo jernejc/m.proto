@@ -14,8 +14,8 @@ var SidebarComponent = React.createClass({
         return (
             /* jshint ignore:start */
             <div className="topbar row">
-                <Button icon="list-thumbnails" onClick={this.toggleSidebar} className="menu-btn" />
-                <Button icon="checkbox" onClick={this.toggleFilter} className="filter-btn" />
+                <Button icon="checkbox" onClick={this.toggleFilter} className="filter-btn right" />
+                <Button icon="list-thumbnails" onClick={this.toggleSidebar} className="menu-btn left" />
             </div>
             /* jshint ignore:end */
         );
