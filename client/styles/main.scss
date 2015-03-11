@@ -1,6 +1,7 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700');
 
 @import "_settings";
+@import "snap";
 @import "../bower_components/foundation/scss/foundation";
 
 $topbar-height : 4rem;
@@ -27,6 +28,9 @@ body {
   overflow-x: hidden;
   height: 100%;
   @include  grid-row();
+  .snap-content {
+    background: #FFFFFF;
+  }
 }
 
 
@@ -75,19 +79,13 @@ h1,h2,h3,h4,h5 {
 }
 
 .sidebar {
+    @include side-nav();
     z-index: 3;
     position: fixed;
     top: 0px;
     bottom: 0px;
     width: 20em;
     background: #e2e2e2;
-
-    transform: translateX(-100%);
-    transition: transform 0.2s linear;
-
-    &.open {
-        transform: translateX(0%);
-    }
 }
 
 .topbar {
