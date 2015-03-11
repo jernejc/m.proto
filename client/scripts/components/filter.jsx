@@ -34,7 +34,7 @@ var filterComponent = React.createClass({
         return (
             /* jshint ignore:start */
             <div className={classString}>
-                <h3>Filter properties <Button icon="x" className="close" onClick={this.close}/></h3>
+                <h3>Filter properties <Button icon="x" className="right" onClick={this.close}/></h3>
                 <div className="form">
                     <div className="row">
                         <input className="city" type="text" placeholder="Location (city, region..)" />
