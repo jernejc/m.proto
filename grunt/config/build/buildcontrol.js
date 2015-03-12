@@ -22,7 +22,7 @@ var taskConfig = function(grunt) {
 		github: {
 			options: {
 				remote: 'https://github.com/jernejc/m.proto.git',
-				branch: 'master',
+				branch: 'production',
 				tag: pkg.version,
 				login: 'jernejc',
 				token: 'c2902jgit'
