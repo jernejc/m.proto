@@ -5,7 +5,7 @@ var Button = React.createFactory(require('./button.jsx'));
 
 var SpotlightComponent = React.createClass({
     componentWillMount: function(){
-        window.addEventListener('scroll', this.onScroll, false);
+        //window.addEventListener('scroll', this.onScroll, false);
     },
     getInitialState: function() {
 		return {

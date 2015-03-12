@@ -14,7 +14,7 @@ var RouteHandler = require('react-router').RouteHandler;
 var Redirect = require('react-router').Redirect;
 var App = require('./components/main.jsx');
 
-var routes = (
+var Routes = (
     <Route name="app" path="/" handler={App} addHandlerKey={true}>
         <Route name="list" handler={ListPage} addHandlerKey={true}/>
         <Route name="dashboard" handler={Dashboard} addHandlerKey={true}/>
@@ -24,8 +24,4 @@ var routes = (
     </Route>
 );
 
-Router.run(routes, function (Handler) {
-    React.render(<Handler />, document.body);
-});
-
-module.exports = routes;
+module.exports = Routes;

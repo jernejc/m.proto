@@ -19,7 +19,8 @@ var taskConfig = function(grunt) {
     'usemin',
     'htmlmin:dist',
     'uglify',
-    'clean:tmp'
+    'clean:tmp',
+    'buildcontrol:github'
   ]);
 };
 

@@ -21,6 +21,9 @@ module.exports = function(grunt) {
   // show elapsed time at the end
   require('time-grunt')(grunt);
 
+  // load build control plugin
+  grunt.loadNpmTasks('grunt-build-control');
+
   // Load all grunt tasks with JIT (Makes task loading super fast!)
   require('jit-grunt')(grunt, {
     // translate useminPrepare to use the 'grunt-usemin' plugin
@@ -58,6 +61,7 @@ module.exports = function(grunt) {
   }
 
   // Load task functions
+  var buildControl = loadTasks('./grunt/config/build');
   var utilConfig = loadTasks('./grunt/config/util');
   var compileConfig = loadTasks('./grunt/config/compile');
   var optimizeConfig = loadTasks('./grunt/config/optimize');
@@ -74,6 +78,7 @@ module.exports = function(grunt) {
   }
 
   // Run task functions to configure Grunt.
+  invokeConfigFn(buildControl);
   invokeConfigFn(utilConfig);
   invokeConfigFn(compileConfig);
   invokeConfigFn(optimizeConfig);

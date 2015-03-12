@@ -23,6 +23,7 @@ var IndexComponent = React.createClass({
     mixins: [Navigation],
     statics: {
         willTransitionFrom: function(transition, component) {
+            console.log('layout scrollTop', document.querySelector('.layout').scrollTop)
             LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
         },
         willTransitionTo: function(transition, component) {
@@ -30,9 +31,6 @@ var IndexComponent = React.createClass({
                 document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
             }, 1)
         }
-    },
-    componentWillMount: function(){
-        window.addEventListener('scroll', this.onScroll, false);
     },
     render: function() {
         return (
@@ -56,11 +54,7 @@ var IndexComponent = React.createClass({
 
     filter: function() {
         this.transitionTo('filter');
-    },
-
-    onScroll: function() {
-
-    }   
+    }  
 
 });
 
