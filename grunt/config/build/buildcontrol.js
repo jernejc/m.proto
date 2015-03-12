@@ -25,7 +25,7 @@ var taskConfig = function(grunt) {
 				branch: 'production',
 				tag: pkg.version,
 				login: 'jernejc',
-				token: 'c2902jgit'
+				token: ''
 			}
 		},
 		local: {

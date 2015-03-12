@@ -1,6 +1,6 @@
 {
   "name": "mproto",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "async": "~0.7.0",
     "body-parser": "~1.0.2",
