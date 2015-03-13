@@ -23,12 +23,12 @@ var IndexComponent = React.createClass({
     mixins: [Navigation],
     statics: {
         willTransitionFrom: function(transition, component) {
-            console.log('layout scrollTop', document.querySelector('.layout').scrollTop)
-            LayoutStore.setScrollPos('index', document.querySelector('.layout').scrollTop);
+            console.log('layout scrollTop', document.querySelector('.snap-content').scrollTop)
+            LayoutStore.setScrollPos('index', document.querySelector('.snap-content').scrollTop);
         },
         willTransitionTo: function(transition, component) {
             setTimeout(function() {
-                document.querySelector('.layout').scrollTop = LayoutStore.getScrollPos('index');
+                document.querySelector('.snap-content').scrollTop = LayoutStore.getScrollPos('index');
             }, 1)
         }
     },
