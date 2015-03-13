@@ -5,7 +5,6 @@ client/bower_components
 .tmp
 .grunt
 server/config/secrets.js
-grunt/config/build/buildcontrol.js
 .DS_Store
 .yo-rc.json
 .idea
