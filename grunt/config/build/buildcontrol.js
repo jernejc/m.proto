@@ -24,7 +24,7 @@ var taskConfig = function(grunt) {
 				remote: 'https://github.com/jernejc/m.proto.git',
 				branch: 'master',
 				tag: pkg.version,
-				login: 'jernejc',
+				login: '',
 				token: ''
 			}
 		},
